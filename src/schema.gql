@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PostModel {
+  id: String!
+  title: String!
+  description: String!
+  userId: String!
+}
+
+type UserPublicModel {
+  id: String!
+  name: String!
+  email: String!
+  posts: [PostModel!]
+  getUsers: PostModel!
+}
+
+type UserPrivateModel {
+  id: String!
+  name: String!
+  email: String!
+  password: String!
+}
+
+type Query {
+  getMain: String!
+  getUsersPrivate: [UserPrivateModel!]!
+}
+
+type Mutation {
+  addUser(user: CreateUserInput!): UserPublicModel!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
