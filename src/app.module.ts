@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
+import { UsersService } from './users/users.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { AppResolver } from './app.resolver';
+import { UsersResolver } from './users/users.resolver';
 import { join } from 'path';
+import { PostService } from './posts/post.service';
+import { PostsLoader } from './loaders/posts.loader';
+import { UsersPrivateResolver } from './users/users-private.resolver';
 
 @Module({
   imports: [
@@ -12,6 +15,12 @@ import { join } from 'path';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
   ],
-  providers: [AppResolver, AppService],
+  providers: [
+    UsersResolver,
+    UsersPrivateResolver,
+    UsersService,
+    PostService,
+    PostsLoader,
+  ],
 })
 export class AppModule {}

@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { UserPublicModel } from './models/user-public.model';
+import { UserModel, UserPrivateModel } from './models/user.model';
 import { CreateUserInput } from './dto/create-user.input';
-import { UserPrivateModel } from './models/user-private.model';
 import { UserEntity } from './models/user.entity';
 
 @Injectable()
-export class AppService {
+export class UsersService {
   private users: UserEntity[] = [
     {
       id: '123',
@@ -33,7 +32,7 @@ export class AppService {
     },
   ];
 
-  createUser(user: CreateUserInput): UserPublicModel {
+  createUser(user: CreateUserInput): UserModel {
     const newUser: UserEntity = {
       id: new Date().getTime().toString(),
       ...user,

@@ -9,28 +9,29 @@ type PostModel {
   userId: String!
 }
 
-type UserPublicModel {
+type UserModel {
   id: String!
   name: String!
   email: String!
-  posts: [PostModel!]
-  getUsers: PostModel!
+  posts: [PostModel!]!
 }
 
 type UserPrivateModel {
   id: String!
   name: String!
   email: String!
+  posts: [PostModel!]!
   password: String!
 }
 
 type Query {
   getMain: String!
+  getUsers: [UserModel!]!
   getUsersPrivate: [UserPrivateModel!]!
 }
 
 type Mutation {
-  addUser(user: CreateUserInput!): UserPublicModel!
+  addUser(user: CreateUserInput!): UserModel!
 }
 
 input CreateUserInput {
