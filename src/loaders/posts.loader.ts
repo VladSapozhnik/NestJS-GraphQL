@@ -21,12 +21,3 @@ export class PostsLoader {
     return this.loader.load(userId);
   }
 }
-// export function createPostsLoader(postService: PostsService) {
-//   return new DataLoader<string, PostModel[]>((userIds: readonly string[]) => {
-//     const posts = postService.findPostByUserIds([...userIds]);
-//
-//     return Promise.resolve(
-//       userIds.map((userId) => posts.filter((post) => post.userId === userId)),
-//     );
-//   });
-// }
