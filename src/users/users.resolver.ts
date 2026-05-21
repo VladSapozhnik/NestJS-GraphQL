@@ -24,11 +24,6 @@ export class UsersResolver {
     return this.appService.createUser(user);
   }
 
-  @Query(() => String)
-  getMain() {
-    return this.appService.getHello();
-  }
-
   @Query(() => [UserModel])
   getUsers() {
     return this.appService.getUsers();
