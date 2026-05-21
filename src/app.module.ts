@@ -4,7 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UsersResolver } from './users/users.resolver';
 import { join } from 'path';
-import { PostService } from './posts/post.service';
+import { PostsService } from './posts/posts.service';
 import { PostsLoader } from './loaders/posts.loader';
 import { UsersPrivateResolver } from './users/users-private.resolver';
 
@@ -19,7 +19,7 @@ import { UsersPrivateResolver } from './users/users-private.resolver';
     UsersResolver,
     UsersPrivateResolver,
     UsersService,
-    PostService,
+    PostsService,
     PostsLoader,
   ],
 })

@@ -2,7 +2,7 @@ import { PostModel } from './models/post.model';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class PostService {
+export class PostsService {
   private posts: PostModel[] = [
     {
       id: '235453363',
