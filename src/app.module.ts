@@ -7,6 +7,7 @@ import { join } from 'path';
 import { PostsService } from './posts/posts.service';
 import { PostsLoader } from './loaders/posts.loader';
 import { UsersPrivateResolver } from './users/users-private.resolver';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UsersPrivateResolver } from './users/users-private.resolver';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
+    FilesModule,
   ],
   providers: [
     UsersResolver,

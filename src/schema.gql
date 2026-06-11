@@ -25,7 +25,6 @@ type UserPrivateModel {
 }
 
 type Query {
-  getMain: String!
   getUsers: [UserModel!]!
   getUsersPrivate: [UserPrivateModel!]!
 }
